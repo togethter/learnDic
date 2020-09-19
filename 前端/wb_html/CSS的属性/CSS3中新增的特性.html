@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3中新增的特性</title>
+    <style>
+        div{
+            background-color: red;
+            width: 300px;
+            height: 160px;
+        /*外边距*/
+            margin: 20px;
+        /*圆角*/
+        /*    border-radius: 20px;*/
+            border-top-left-radius: 100px;
+            border-bottom-right-radius: 100px;
+        }
+        .test1 {
+            background-color: rgb(255,0,0,1.0);
+        }
+        .test2 {
+            background-color: rgb(255,0,0,0.8);
+        }
+        .test3 {
+            background-color: rgb(255,0,0,0.6);
+        }
+        .test4 {
+            background-color: rgb(255,0,0,0.4);
+        }
+        .test5 {
+            background-color: rgb(255,0,0,0.2);
+        }
+    /*伪类*/
+        div:hover {
+            box-shadow: 10px 10px 20px purple inset;
+        }
+        p{
+            font-size: 100px;
+        /*文字阴影*/
+            text-shadow: 10px -5px red;
+        }
+    </style>
+</head>
+<body>
+    <div class="test1">1</div>
+    <div class="test2">2</div>
+    <div class="test3">3</div>
+    <div class="test4">4</div>
+    <div class="test5">5</div>
+<p>大声大声大声大声大声大声大声</p>
+</body>
+</html>

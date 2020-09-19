@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+body{
+    margin: 60px;
+}
+ul{
+    list-style: none;
+}
+/*----------------------------*/
+#tab{
+    width: 498px;
+    height: 130px;
+    border: 1px solid #e8e8e8;
+    /* 处理超出的内容*/
+    overflow: hidden;
+}
+/*----------------------------*/
+#tab_header{
+    height: 33px;
+    background-color: #e8e8e8;
+    /*定位*/
+}
+#tab_header ul{
+    width: 501px;
+    position: relative;
+    left: -1px;
+
+}
+#tab_header ul li{
+    float: left;
+    /*background-color: red;*/
+    width: 98px;
+    height: 33px;
+    /*文字水平和垂直居中*/
+    text-align: center;
+    line-height: 33px;
+
+    /**设置内边距,先占满空间*/
+    padding: 0 1px;
+
+    /*下边框*/
+    border-bottom: 1px solid #9d9d9d;
+}
+/*拿到头部选中的li标签*/
+#tab_header ul li.selected {
+    background-color: white;
+    /*去除下边框*/
+    border-bottom: 0;
+    /*设置左右边框*/
+    border-left: 1px solid #9d9d9d;
+    border-right: 1px solid #9d9d9d;
+    /*释放先前的空间*/
+    padding: 0;
+
+}
+/*----------------------------*/
+#tab_content{
+
+}
+/*伪类*/
+#tab_header ul li:hover{
+    color: orange;
+    font-weight:bolder ;
+}
+#tab_content .dom{
+    display: none;
+}
+#tab_content .dom ul li{
+    float:  left;
+    width: 220px;
+    text-align: center;
+    margin: 5px 0;
+}
+#tab_content .dom ul li a:hover{
+    color: orange;
+}

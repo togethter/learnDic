@@ -1,0 +1,78 @@
+重要的概念
+在学习Dart语言时，应该基于以下事实和概念:
+
+1、任何保存在变量中的都是一个对象，并且所有的对象都是对应一个类的实例。无论是数字，函数和null都是对象。所有的对象继承自Object类。
+2、尽管Dart是强类型的，但是Dart可以推断类型，所以类型注释是可选的。在上面的代码中，number被推断为int类型。如果明确说明不需要任何类型，需要使用特殊类型dynamic。
+3、Dart支持泛型，如List<int>（整数列表）或List<dynamic>（任何类型的对象列表)。
+4、Dart支持顶级函数(列如main()),同样函数绑定在类或对象上(分别是静态函数和实例函数)。以及支持函数内创建函数(嵌套或局部函数)。
+5、类似地，dart支持顶级变量，同样变量绑定在类或对象上(静态变量和实例变量)。实例变量有事称为字段或属性。
+6、与Java不同，Dart没有关键字 "public", "protected"和 "private"。如果标志符以下划线(_)开头，则它相对于库是私有的。有关更多信息，参考库和可见性。
+7、dart语法中包含表达式(expressions)(有运行时值)和语句(statements)（没有运行时值）。例如，条件表达式condition? expr1:expr2的值是expr1或expr2。讲其与if-else语句相比较，if-else语句没有值。一条语句通常包含一个或多个表达式，相反表达式不能直接包含语句。
+8、Dart工具提示两种类型问题：警告_和_错误。警告只是表明代码不能无法正常工作，但不会阻止程序的执行。错误可能是编译时错误或者运行时错误。编译时错误会组织代码的运行；运行时错误会导致代码在执行过程中引发异常。
+
+
+抽象类
+使用abstract修饰符来定义 抽象类-抽象类不能实例化。抽象类通常用来定义接口，以及实现。如果希望抽象类不能被实例化，那么可以通过定义一个工厂构造函数来实现。
+
+抽象类通常具有抽象方法。下面是一个声明具有抽象方法的抽象类示例：
+
+// 这个类被定义为抽象类
+// 所以不能被实例化。
+Abstract class AbstractContainer {
+	// 定义构造行数，字段，方法...
+	void updateChild // 抽象方法。
+}
+// 隐式接口
+每个类都隐士的定义了一个接口，接口包含了该类所有的实例成员及实现的接口。如果要创建一个A类，A要支持B类的API，但是不需要继承B的实现，那么可以通过A实现B的接口。
+一个类可以通过implements关键字来实现一个或者多个接口，并实现每个接口要求的API。例如：
+class Preson {
+// 包含在接口里，但是在当前库中可见。
+final _name;
+// 不包含在接口里，因为这是一个构造函数。
+Person(this._name);
+
+// 包含在接口里。
+String greet(String who) => 'Hello,$who. I am $_name.';
+}
+
+class	impostor implements Person {
+get	_name => '';
+String greet(String who) => 'Hi $who. Do you know who I am?'
+}
+
+String greetBob(Person preson)	=> person.greet('Bob');
+
+void main() {
+Print(greetBob(Person('kathy')));
+Print(greetBob(Impostor()));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

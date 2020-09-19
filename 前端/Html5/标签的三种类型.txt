@@ -1,0 +1,94 @@
+
+===================== 三种类型===================
+1块级标签
+<div>我是内容标签，块级标签的一种类型，独占一行</div>
+
+<style>
+*{
+margin:0;
+padding:0;
+}
+div{
+background-color:red;
+width:50%;
+height:200px;
+}
+span{
+ background-color:purple;
+}
+label{
+background-color:yellow;
+width:200%;
+height:150px;
+}
+</style>
+2行内标签 不能改变宽度和高度取决于内容
+<span>我是行内标签</span>
+<a href="#">我是超链接</a>
+<label>我是文本标签</label>
+
+3行内-块级标签 可以改变宽度和高度
+<button>我是按钮</button>
+<input placeholder="我是占位文字>
+===================三种类型============================
+===================CSS属性============================
+display:属性能修改标签的显示类型{
+display:none (隐藏标签)
+display:block;(可以将行内标签--->块级标签)
+比如讲label标签变成块级标签
+label{
+background-color:yellow;
+width:500px;
+height:150px;
+// 改变标签的类型：行内--->块级
+display:block;
+}
+}
+display:inline(让块标签变为行内标签)
+display:inline-block(块-->行内-块标签)
+
+
+
+
+
+
+
+
+
+CSS 属性
+可继承属性：
+父标签的属性值会传递给子标签
+一般是文字控制标签
+不可继承属性：
+区块控制  （块级标签独占一行，尺寸不能继承）
+
+
+CSS的可继承属性
+所有标签可继承
+visibility:hidden;// 隐藏 占位
+display:none;// 隐藏不占位
+cursor:move; 显示光标类型
+内联标签可继承
+letter-spacing,word-spcing,white-space,line-height,color,font,font-family
+font-size,font-style,font-variant,font-weight,text-decoration,text-transform,direction
+ 
+
+块级标签可继承
+text-indent(首行缩进),text-align（对其方式）
+text-indent:20px;text-indent:8%;
+list-style: 列表属性改变标签的样式
+
+
+CSS 不可继承属性
+display,margin,border,padding,background
+height,min-height,max-height,width,min-width,max-width,
+overflow,position,left,right,top,bottom,z-index
+float,clear
+table-layout,vertical-align
+page-break-after,page-bread-before
+
+
+
+ 
+
+===================CSS属性============================

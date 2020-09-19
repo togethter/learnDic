@@ -1,0 +1,56 @@
+AVCaptureDevice // 扫描的设备（扫描什么的视频、音频、、、、）
+
+AVCaptureDeviceInput// 扫描设备采集（采集视频、音频、、、、）
+
+
+AVCaptureMetadataOutput：//输出采集—采集会话定时产生元数据，输出设备处理被采集数据输出
+
+// AVCaptureMetadataOutput拦截被会话发射元数据对象，并且促使他们让一个代理对象去处理，你可以使用这个类初始化去处理通过采集获得的特殊的元数据。你可以通过这个类去做其他输出对象，特别是通过添加他作为一个采集会话对象的输出
+
+
+AVCaptureStillImageOutput// ios10.0之后不支持像RAW image outPut and Live Photos新的相机采集特性，在iOS10.0之后使用AVCapturePhotoOutput类代替
+
+AVCaptureSession
+
+
+AVCaptureVideoPreviewLayer
+
+
+
+通知代理扫描处理完成了 当整个扫描处理已经完成了，photo output调用这个方法，并且代理不会再被发送扫描请求，使用这个方法的同时清除所有与扫描请求相连接的资源
+- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishCaptureForResolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings error:(NSError *)error;
+
+使用此方法接收照片捕获的结果，而不考虑格式。
+对于要在捕获请求中传递的每个主图像，照片输出调用此方法一次。如果您请求以原始和已处理的格式进行捕获，那么对于每个格式，此方法都会触发一次。如果您请求用多个曝光进行带括号的捕获，则此方法对每个曝光触发一次。
+- (void) captureOutput:(AVCapturePhotoOutput*)captureOutput didFinishProcessingPhoto:(AVCapturePhoto*)photo error:(nullable NSError*)error
+
+使用这个方法接收一个livePhoto capture扫描的结果，当这个照片输出调用这个方法，这个电影已经
+组件已经被写入到特定的位置，（为了接收一个持续的图片组件，实现- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishProcessingPhotoSampleBuffer:(CMSampleBufferRef)photoSampleBuffer previewPhotoSampleBuffer:(CMSampleBufferRef)previewPhotoSampleBuffer resolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings bracketSettings:(AVCaptureBracketedStillImageSettings *)bracketSettings error:(NSError *)error;-----为了添加一个被扫描的LivePhotos到用户的PhotosLibrary
+使用PHAssetCreationRequest class 为了使用LivePhotos 来自Photos library 使用PHLivePhoto 和 PHLivePhotoView的类，
+为了在web中展示LivePhoto的内容，使用LivePhotoKit JS framework.
+如果你不是正在请求LivePhoto扫描，你不需要实现这个方法；
+如果你请求一个Live Photo 扫描，你必须实现这个方法（通过设置livePhotoMovieFileURL属性你的photosettingsobject）如果
+不实现这个方法就会抛出一个异常。
+）
+
+- (void) captureOutput:(AVCapturePhotoOutput*)captureOutput didFinishProcessingLivePhotoToMovieFileAtURL:(NSURL*)outputFileURL duration:(CMTime)duration photoDisplayTime:(CMTime)photoDisplayTime resolvedSettings
+
+// 通知代理,一个LivePhoto的内容已经完成了记录
+// photo outPut 扫描完一个a Live Photo里的所有电影数据，调用这个方法，然而这时，这个电影的内容并没有被处理或者写入到储存，（所有的电影文件已经被完成写入并且准备消费，通过实现这个方法通知我们- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishProcessingLivePhotoToMovieFileAtURL:(NSURL *)outputFileURL duration:(CMTime)duration photoDisplayTime:(CMTime)photoDisplayTime resolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings error:(NSError *)error;
+使用这个方法决定，当适当的改变你的UI去表明LivePhoto 电影扫描不在被处理，例如
+例如照相机app当用户处理shutter button，当电影扫描完成之后隐藏它，展示‘LIVE’icon
+这个电影输出调用这个方法仅仅一次，对于每一个LivePhoto扫描
+）
+
+- (void) captureOutput:(AVCapturePhotoOutput*)captureOutput didFinishRecordingLivePhotoMovieForEventualFileAtURL:(NSURL*)outputFileURL resolvedSettings:(AVCaptureResolvedPhotoSettings*)resolvedSettings
+
+
+通知代理photo capture 即将出现
+这个photo output调用这个方法尽可能的接近于扫描的初始化，实时照片捕获禁用快门声音。在某些地区，设备的静音开关可以禁用快门声音。
+- (void) captureOutput:(AVCapturePhotoOutput*)captureOutput willCapturePhotoForResolvedSettings:(AVCaptureResolvedPhotoSettings*)resolvedSettings
+
+
+通知代理扫描的设置已经配置好，即将开始扫描处理。
+这个photo output 调用这个方法，当他已经提交一个设置，即将开始一个扫描处理，这个方法出现早于你调用
+capturePhotoWithSettings:delegate: 方法，
+- (void) captureOutput:(AVCapturePhotoOutput*)captureOutput willBeginCaptureForResolvedSettings:(AVCaptureResolvedPhotoSettings*)resolvedSettings

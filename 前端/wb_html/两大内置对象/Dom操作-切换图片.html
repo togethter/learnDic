@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<img id="icon" src="../imgs/share_btn.png" alt="风景">
+<p></p>
+<button>切换图片</button>
+<script>
+    // 1.1拿到要操作的标签
+    var img = document.getElementById('icon');
+    var btn = document.getElementsByTagName('button')[0];
+    //1.2监听按钮的点击
+    // lastIndexOf 查找字符串是否具有要查找的内容,找到,则返回对应的下标，
+    // 否则返回-1
+
+    btn.onclick = function () {
+        console.log(img.src);
+        if (img.src.lastIndexOf('/imgs/share_btn.png')!== -1) {// 有
+            img.src = '../imgs/h5新增标签.png';
+        } else  {
+            img.src = '../imgs/share_btn.png';
+        }
+    }
+
+</script>
+</body>
+</html>

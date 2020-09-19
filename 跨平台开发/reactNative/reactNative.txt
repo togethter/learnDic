@@ -1,0 +1,8 @@
+1、open /usr/local (打开路径接下来安装的东西都在这里 将这里读写权限打开，显示简介 点开锁都改成读与写把权限应用到程序)
+2、配置ruby环境:  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+3.安装npm和node.js（安装可node.js就有了npm）我们把组件和第三方的框架在react-native 用起来需要在npm下载下来,npm就是资料中心
+4、安装watchman:  brew install watchman
+5、安装Flow:flow 是一个javaScript的静态类型检查器，建议安装它，以方便找出代码可能存在的类型错误  brew install flow
+
+
+

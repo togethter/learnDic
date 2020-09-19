@@ -1,0 +1,11 @@
+MJPrMJPropertyType 属性中的类型
+
+总结:
+id|object|基本类型-Int-float-bool...|
+是否来自foundation框架
+fromFoundation
+是否支持KVC
+KVCDisabled
+
+讲一个属性类型封装成一个模型
++（instancetype)cachedTypeWithCode:(NSString *)code

@@ -1,0 +1,122 @@
+网页的组成
+1HtML
+网页的具体的具体的内容和结构（盖房子）
+2CSS
+网页的样式（美化网页最重要的一块 装修）
+3JavaScript
+网页的动态效果（数据获取）HTML\CSS\JavaScript学习资料：http://www.w3school.com.cn/
+
+HTML 是超文本标记语言其实他就是文本，有浏览器负责将他解析成具体的网页内容
+HTML 的组成跟XML类似
+
+====================标签的基本结构=========================
+<html>// 跟标签
+<head>// 头部
+<title>你好</title>
+// 设置页面编码UTF-8 或者GB2312
+<meta charset"UTF-8">
+</head>
+<body>
+
+// 主要内容
+<div>你好，世界</div>
+
+</body>
+
+</html>
+=====================标签的基本结构========================
+
+====================常见的HTML标签========================
+标题：h1,h2,h3,h4,h5... <h1>.....</h1>
+段落：p  <p> </p>
+换行：br   <br>
+容器：div,span(用来容纳其他标签)
+表格:table,tr,td
+列表：ul（无序） ,ol(有序),li 相当于iOS tableView
+输入框：input  
+<input placeholder="我是占位文字">
+<input value="我是默认值">
+<input type="date"> 
+<input type="color">
+<input type="file">
+<input type="button" value="我是按钮">
+<input type="checkbox"> // 复选框
+<input type=radio> // 单选框
+
+
+段落标签：
+&nbsp; 这个相当于空格：其实有其他的更好的替代品
+<p>&nbsp;&nbsp;我是段落我是段落我是段落 </p>
+
+图像标签：
+
+相对路径：资源在当前的项目中
+绝对路径：在服务器http:// https// ftp:// file:///
+<img src="相对或者绝对图片的路径" width="50%" alt="当图片加载不出来了的话这里提示是干什么的"> //改了宽度高度会等比例缩放 这里是相对于父试图的大小来等比例缩放
+
+HTML5新增标签:
+HTML5新增了27个标签，废弃了16个标签元素，主要包括结构性标签，级块性标签，行内语义性标签，交互性标签
+
+1.结构性标签
+负责Web上下文结构的定义，确保HTML文档，包括：
+article：文章主要内容
+header :标记头部区域内容
+fotter : 标记脚步区域的内容
+sesction: 相当于iOS tableView的分组
+nav 菜单导航,链接导航
+
+<article>
+
+<header>
+<h2>内容 <h2>
+<h4>内容2</h4>
+<img scr="image/share.png">
+</header>
+
+<div>
+<section>
+<h3>内容3 </3>
+<img scr="image..">
+<p>文章内容</p>
+</section>
+</div>
+
+<footer>
+<h3>版权声明</h3>
+<p>内容 </p>
+<p>内容</p>
+</footer>
+</footer>
+</artitcle>
+
+
+
+2块级性标签
+独占一行的标签
+能随时设置宽度和高度（比如div,p,h1,h2,ul,li）
+3行内语义性标签 
+行内标签（内敛标签）多个行内标签能同时显示在一行
+宽度和高度取决于内容的尺寸(比如span,a,label)
+完成web页面具体内容的引用和表述，丰富展示内容，包括
+mater:特定范围内的数值，如工资，数量，百分比 <mater value=50 max="100">/<mater>
+time:时间值
+progress:进度条<progress value="20" max="100"></progress>
+
+<audio src="lujing" controls="controls"></audio>// 音频
+<video src="lujing" controls="controls"></vidio>// 视频 
+4行内-块级标签（内敛-块级标签）
+多个行内-块级标签可以显示在同一行
+能随时设置宽度和高度（比如input,button）
+CSS：
+通配符 * 代表所有的标签
+作用：设置一些全聚德公共属性，字体大小 字体颜色.....
+缺陷：
+1.性能不是很好（递归）
+2.优先级底
+3.不利于SEOyouhua
+选择器的优先级
+1.相同类型的选择器遵循：a.就近原则 b.跌价原则
+2.不相同类型的选择器遵循：
+important>内联>id>类>伪类|属性选择|伪元素>标签>通配符>继承
+====================常见的HTML标签========================
+

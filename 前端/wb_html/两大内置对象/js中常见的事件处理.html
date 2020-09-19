@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <img id="icon" src="./img/renwu01.png" alt="">
+
+    <script>
+    // 当窗口加载完毕
+        window.onload = function () {
+            // 1.1 监听鼠标在图片的事件
+            var icon = document.getElementById('icon');
+            // 鼠标进入图片
+            icon.onmouseover = function () {
+            console.log('鼠标进入图片');
+            }
+            // 鼠标在图片上移动
+            icon.onmousemove = function () {
+                console.log('鼠标在图片上移动');
+            }
+            // 鼠标离开图片
+            icon.onmouseout = function () {
+                console.log('鼠标离开图片');
+            }
+
+        }
+    </script>
+</body>
+</html>

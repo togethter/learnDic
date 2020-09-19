@@ -1,0 +1,10 @@
+创建一个注解java文件
+1、 可以在txt文件里写入public @interface MyAnno {}代码后，在修改成java后缀
+在终端路径下：
+1、javac MyAnno.java
+	生成了MyAnno.class文件
+2、Javap MyAnno.class 反编译生成
+Compiled from "MyAnno.java"
+public interface MyAnno extends java.lang.annotation.Annotation {}
+	
+结论：注解本质上是一个接口，该接口默认继承Annotation

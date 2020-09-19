@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js操纵图片的上下切换</title>
+</head>
+<body>
+<img id="icon" src="./img/renwu01.png" alt="">
+<p></p>
+<button name="pre">上一张</button>
+<button name="next">下一张</button>
+<script>
+    // 闭包执行防止动态的修改代码
+    (function () {
+        // 1.1 获取当前页面的标签
+        var img = document.getElementById('icon');
+        var pre = document.getElementsByName('pre')[0];
+        var next = document.getElementsByName('next')[0];
+
+        // 1.2 监听按钮的点击
+        // 变量
+        var currentIndex    = 1,
+         minIndex        = 1,
+         maxIndex        = 2;
+        // 上一张
+        pre.onclick = function () {
+            if (currentIndex == minIndex){
+                currentIndex = maxIndex;
+            } else  {
+                currentIndex -=1;
+            }
+            // 处理img的src属性
+            // img.src = '../img/renwu0'+currentIndex+'.png';
+            img.src = './img/renwu0'+currentIndex+'.png';
+            console.log(img.src);
+        };
+        // 下一张
+        next.onclick = function () {
+        if (currentIndex == maxIndex) {
+            currentIndex = minIndex;
+        } else  {
+            currentIndex +=1;
+        }
+            // img.src ='../img/renwu0'+currentIndex+'.png';
+            img.src = './img/renwu0'+currentIndex+'.png';
+
+            console.log(img.src);
+        };
+    })();
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- maven版本 -->
+    <modelVersion>4.0.0</modelVersion>
+    <!-- 域名反写+项目名-->
+    <groupId>com.itheima</groupId>
+    <!-- 项目名 子项目名 模块名-->
+    <artifactId>maven_java1</artifactId>
+    <!-- 打包类型-->
+<!--    <packaging>war</packaging>-->
+    <!-- 版本号-类型-->
+    <version>1.0-SNAPSHOT</version>
+    <!-- 项目描述-->
+ 
+    <!-- 依赖标签 配置项目中依赖的jar包坐标-->
+<!--    <dependencys></dependencys>-->
+
+
+
+</project>

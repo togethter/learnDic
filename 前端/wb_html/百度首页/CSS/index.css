@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: black;
+}
+body{
+/*统一设置字体*/
+    font-size: 13px;
+/*设置背景图片的大小*/
+    background-size: cover;
+
+}
+/*头部*/
+#header{
+    background-color: rgba(255,255,0.4);
+/*设置外间距*/
+    margin: 0 0 15px;
+/*设置子标签右对齐*/
+    text-align: right;
+    font-size: 15px;
+/*设置高度*/
+    height: 38px;
+    line-height: 44px;
+
+
+}
+#header a{
+     margin-right: 8px;
+/*设置文字的样式*/
+    font-weight: bolder;
+}
+#header a.no-weight {
+    /*设置文字的样式*/
+    font-weight: normal;
+}
+#header a.more-product{
+    background-color: #3385ff;
+    color: white;
+/*去除下划线*/
+    text-decoration: none;
+    padding: 3px 3px;
+}
+/*中间*/
+#main{
+    /*background-color: greenyellow;*/
+}
+#main .main-middle {
+    width: 600px;
+    height: 38px;
+/*块级标签居中*/
+    margin: 0 auto;
+/*上下外边距*/
+    margin: 20px auto;
+
+}
+#main .main-middle input{
+    width: 500px;
+    height: 100%;
+/*设置计算模式*/
+    box-sizing: border-box;
+/*设置边框*/
+    border: 1px solid #dddddd;
+/*浮动*/
+    float: left;
+/*设置内边距*/
+    padding-left: 8px;
+
+}
+#main .main-middle a {
+    background-color: #3385ff;
+    width: 100px;
+    height: 100%;
+    /*改变标签的类型 行内-行内-块级*/
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    /**水平居中垂直居中*/
+    text-align: center;
+    line-height: 38px;
+
+}
+#main .main-middle input:focus {
+/*去除外边线*/
+    outline: none;
+    border-color: #3385ff;
+}
+#main .main-top {
+text-align: center;
+}
+#main .main-top img {
+    width: 270px;
+    height: 129px;
+}
+#main .main-footer-img{
+    width: 50%;
+/*居中*/
+    margin: 0 auto;
+    /*里面的内容居中*/
+    text-align: center;
+}
+#main .main-footer-img img {
+    width: 130px;
+    height: 120px;
+/*图片之间的间距*/
+    margin: 8px;
+
+}
+#main .main-footer-img img:hover{
+    box-shadow: 1px 1px #e8e8e8;
+    opacity: 0.4;
+}
+/*尾部*/
+#footer{
+    position: fixed;
+    left: 0;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+/*内边距*/
+    padding: 15px 0;
+    font-size: 14px;
+
+}
+
+#footer .footer-top {
+    margin-bottom: 8px;
+}
+#footer a{
+    margin: 0 5px;
+}

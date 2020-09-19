@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Float</title>
+<!--    网页中所有的标签一旦脱离标准流，类型就会被强制
+转为行内-块级标签   -->
+    <style>
+        #main{
+            background-color: red;
+            width: 500px;
+            height: 400px;
+        }
+        .left {
+            background-color: green;
+            width: 50px;
+            height: 50px;
+        /*脱离标准流*/
+            float: left;
+        }
+        .right{
+            background-color: orange;
+            float: right;
+        }
+        .normal{
+            background-color: aqua;
+        }
+        ul>li {
+            /*脱离标准流*/
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div class="left">左边</div>
+    <div class="right">右边</div>
+    <div class="normal">正常的盒子</div>
+    <ul>
+        <li>213131</li>
+        <li>213131</li>
+        <li>213131</li>
+        <li>213131</li>
+        <li>213131</li>
+    </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+framework module Pods_PPNetworkHelperTests {
+  umbrella header "Pods-PPNetworkHelperTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

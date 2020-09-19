@@ -1,0 +1,34 @@
+body{
+    padding-top: 50px;
+}
+#main{
+    padding: 30px;
+}
+#main .container-fluid .row{
+    /*居中*/
+    text-align: center;
+}
+#main .container-fluid .row .col-md-4{
+    margin-bottom: 15px;
+}
+#main .container-fluid .row .col-md-4 img {
+    width: 140px;
+}
+
+
+#main .container-fluid .row .col-md-4 p{
+    text-align: left;
+    /*首行缩进*/
+    text-indent: 25px;
+    min-height: 60px;
+}
+#tab .tab-content .row .col-md-7 {
+    margin-top: 10px;
+}
+#tab .tab-content .row .col-md-7 h1{
+    color: orangered;
+}
+#tab .tab-content .row .col-md-7 span{
+    color: darkgray;
+    font-size: 25px;
+}

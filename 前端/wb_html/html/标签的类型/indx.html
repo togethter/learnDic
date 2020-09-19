@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标签的三种类型</title>
+    <style>
+        *{
+            /*外间距*/
+            margin:0 ;
+            /*内间距*/
+            padding: 0;
+        }
+        /*块*/
+        div{
+            background-color: red;
+            width: 50%;
+            height: 200px;
+            /*display: none;!*相当于iOS hidden=YES*!*/
+            /*    改变标签的类型：块级->行内*/
+            /*display: inline;*/
+            /*    改变标签的类型：块级->行内-块级标签*/
+            display: inline-block;
+        }
+        div:hover {
+            /*隐藏*/
+            display: none;
+        }
+        /*行内*/
+        span {
+            background-color: purple;
+        }
+
+        label {
+            background-color: yellow;
+            width: 500px;
+            height: 150px;
+        /*    改变标签的类型：行内->块级*/
+            display: block;
+        }
+        /**行内-块级*/
+        button{
+            width: 200px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<!--块级标签-->
+<div>我是容器标签</div>
+<!--行内标签-->
+<span>我是行内容器span</span>
+<a href="#">我是行内超链接标签</a>
+<label>我是文本标签</label>
+
+<!--行内-块级标签-->
+<button>我是按钮</button>
+<input placeholder="我是占位文字"></input>
+</body>
+</html>

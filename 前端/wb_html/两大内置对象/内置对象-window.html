@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内置对象-window</title>
+    <script>
+        /*
+         内置对象-window
+         1、所有全局变量都是window的属性
+         2、所有的全局函数都是window的方法
+         */
+        /*
+        this所在的函数在哪个对象中，this就代表这个对象
+         */
+        var age = 20;
+        // console.log(age);
+        console.log(window.age);
+
+        function See() {
+        console.log('----------');
+        }
+
+        See();
+        window.See();
+        // 题目
+        function Person() {
+            console.log(this);
+        }
+        Person();// window
+        new Person();//
+
+        /*
+        内置对象-window
+       动态的跳转
+       UIWebView WKWebView 代理 didLoadRequest....
+        */
+        alert(0);
+        // window.location.href = 'http://www.520it.com';
+        // 'XMG://open' 协议头
+        window.location.href = 'XMG://open';
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

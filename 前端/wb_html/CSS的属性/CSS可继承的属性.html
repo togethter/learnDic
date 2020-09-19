@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS可继承的属性</title>
+
+<!--    继承：文字控制-->
+    <style>
+        #main{
+        /*设置文字颜色*/
+            color: red;
+            font-size: 30px;
+            font-family: "sans-serif";
+            font-weight: lighter;
+        }
+        p{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+<div    id="main">
+    <div>我是块级标签</div>
+    <p>我也是，段落标签</p>
+    <span>我是行内标签</span>
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <p>我是段落</p>
+    <a href="我是超链接"></a>
+</div>
+
+</body>
+</html>
+
+
+<!--
+所有标签可继承
+visibility(是否可见)、cursor
+内联标签可继承
+letter-spacing、word-spacing、white-space、line-height
+color、font、font-family、font-size、font-style、font-variant、
+font-weight、text-decoration、text-transform、direction
+
+
+
+-->

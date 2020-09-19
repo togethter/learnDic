@@ -1,0 +1,150 @@
+/*导入自定义的字体*/
+/*
+    <>必需，缺一不可 []可选
+  @font-face {
+      font-family: <YourWebFontName>;
+      src: <source> [<format>][,<source> [<format>]]*;
+      [font-weight: <weight>];
+      [font-style: <style>];
+    }
+著作权归作者所有。
+商业转载请联系作者获得授权,非商业转载请注明出处。
+原文: https://www.w3cplus.com/content/css3-font-face © w3cplus.com
+*/
+
+/*@font-face {*/
+/*    font-family: ;*/
+/*    src: url("../font...");*/
+
+/*}*/
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: url("../img/bg.png");
+    /*设置字体导入的字体*/
+    /*font-family: 导入的字体;*/
+}
+ul{
+    /*去除原点*/
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+/*头部*/
+#top{
+    background-color: red;
+    height: 3px;
+}
+
+/*导航*/
+#nav{
+text-align: center;
+    margin-bottom: 100px;
+}
+#nav ul,#nav ul li{
+    /*改变标签类型*/
+    display: inline-block;
+}
+#nav ul li a{
+    width: 200px;
+    height: 44px;
+    /*background-color: palegoldenrod;*/
+    /*改变a标签的类型*/
+    display: inline-block;
+    font-size: 29px;
+    /*内容垂直居中*/
+    line-height: 44px;
+    margin: 0 8px;
+}
+#nav ul li a:hover,#nav ul li a.selected{
+background-color: white;
+    color: black;
+}
+/*宠物列表*/
+#list{
+    background-color: white;
+
+}
+#list .love{
+    /*改变标签的类型*/
+    display: inline-block;
+    width: 360px;
+    text-align: left;
+    margin: 50px;
+}
+#list .love p{
+    font-size: 16px;
+    text-indent: 28px;
+}
+#list .love input{
+    background-color: orangered;
+    border: 0;
+    padding: 7px;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+}
+/*尾部*/
+#bottom{
+    text-align: center;
+    padding-bottom: 30px;
+}
+#bottom h2{
+    color: white;
+    margin: 5px 0 ;
+}
+#bottom ul,#bottom ul li{
+    display: inline-block;
+}
+/*响应式布局*/
+/*监听设备屏幕的最大宽度*/
+@media screen and (max-width:1099px ){
+    #nav ul li a{
+        width: 150px;
+        font-size: 25px;
+
+    }
+    #nav{
+        margin-bottom: 80px;
+    }
+}
+@media screen and (max-width:888px ){
+    #nav ul li a{
+        width: 100px;
+        font-size: 20px;
+
+    }
+    #nav{
+        margin-bottom: 60px;
+    }
+}
+@media screen and (max-width:666px ){
+    #nav ul li a{
+        width: 70px;
+        font-size: 15px;
+    }
+    #nav{
+        margin-bottom: 40px;
+    }
+}
+@media screen and (max-width:360px ){
+    #nav ul li a{
+        width: 50px;
+        font-size: 14px;
+    }
+    #nav{
+        margin-bottom: 12px;
+    }
+    #list .love{
+        width: 300px;
+    }
+    #list .love img{
+        width: 300px;
+    }
+}

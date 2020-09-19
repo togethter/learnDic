@@ -1,0 +1,16 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+target 'PPNetworkHelper' do
+ use_frameworks!
+ pod 'BRPickerView' #### 选择器
+ pod 'MJExtension'  ####字典转模型
+ pod 'Masonry'      #### 布局
+ pod 'Toast', '~> 4.0.0' #### 吐死提示
+  # Pods for PPNetworkHelper
+
+  target 'PPNetworkHelperTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

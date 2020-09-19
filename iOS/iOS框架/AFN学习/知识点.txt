@@ -1,0 +1,13 @@
+
+1.URL 中的baseURL的知识点
+Below are a few examples of how `baseURL` and relative paths interact:
+
+    NSURL *baseURL = [NSURL URLWithString:@"http://example.com/v1/"];
+    [NSURL URLWithString:@"foo" relativeToURL:baseURL];                  // http://example.com/v1/foo
+    [NSURL URLWithString:@"foo?bar=baz" relativeToURL:baseURL];          // http://example.com/v1/foo?bar=baz
+    [NSURL URLWithString:@"/foo" relativeToURL:baseURL];                 // http://example.com/foo
+    [NSURL URLWithString:@"foo/" relativeToURL:baseURL];                 // http://example.com/v1/foo
+    [NSURL URLWithString:@"/foo/" relativeToURL:baseURL];                // http://example.com/foo/
+    [NSURL URLWithString:@"http://example2.com/" relativeToURL:baseURL]; // http://example2.com/
+.......
+........

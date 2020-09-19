@@ -1,0 +1,371 @@
+
+C 编译器
+写在源文件中的源代码是人类可读的源。它需要"编译",转为及其语言，这样CPU可以按给定指令执行程序。
+C语言编译器用于把源代码编译成最终的可执行程序。这里假设您已经对编译语言有基本的了解了。
+最常用的免费可用的编译器是GUN的C/C++编译器，如果您使用的是HP或solaris，则可以使用各自操作系统上的编译器
+
+Gun 的gcc 编译器适合于c和C++编译语言。
+
+#include <stdio.h>
+ 
+int main()
+{
+   /* 我的第一个 C 程序 */
+   printf("Hello, World! \n");
+   
+   return 0;
+}
+1、打开一个文本编辑器，添加上述代码。
+2、保存文件为hello.c
+3、打开命令提示符，进入到保存文件所在的目录。
+4、键入gcc hello.c输入回车，编译代码。
+5、如果代码中没有错误，命令提示符会调到下一行，并生成a.out可执行文件。
+6、现在，键入a.out来执行程序。
+7、您可以看到程序上显示'Hello word'
+
+
+$ gcc hello.c
+$ ./a.out
+Hello,world!
+
+请确保您的保存中已包含gcc编译器，并确保在包含源文件hello.c的目录中运行它。
+如果是多个c代码的源码文件，编译方法如下：
+$ gcc test1.c test2.c -o main.out
+$ ./main.out
+
+test1.c 与test2.c是两个源代码文件。
+
+
+
+
+auto:申明自动变量。
+break:跳出当前循环
+case:开关语句分支
+Char 声明字符型变量或函数返回值类型
+Const 定义常亮，如果一个变量被const修饰，那么它的值就不能被改变。
+Continue 结束当前循环，开始下一轮循环
+Default 开关语句中的'其他'分支
+Do 循环语句的循环体
+double 声明双精度浮点型变量或函数返回值类型
+Else 条件语句否定分支(与if连用)
+Enum 声明枚举类型
+extern 声明变量或函数是在其他文件或本文件的其他位置定义
+float 声明浮点型变量或函数返回值类型。
+for 一种循环语句
+goto 无条件跳转语句
+If 条件语句
+Int 声明整形变量或函数
+long 声明长整形变量或函数返回值类型。
+Register 声明寄存器变量
+Return 子程序返回语句(可带参数，也可以不带参数)
+Short 声明短整形变量或函数
+Signed 声明有符号类型变量或函数
+Sieof 计算数据类型或变量长度(即所占字字节)
+static	声明静态变量
+struct	声明结构体类型
+switch	用于开关语句
+typedef	用以给数据类型取别名
+unsigned	声明无符号类型变量或函数
+union	声明共用体类型
+void	声明函数无返回值或无参数，声明无类型指针
+volatile	说明变量在程序执行中可被隐含地改变
+while	循环语句的循环条件
+
+
+C99新增关键字
+_Bool / _Complex / _imaginary / inline / restrict
+C11 新增关键字
+_Alignas / _Alignof / _atomic / _generic / _Noreturn / _Static_assert / _Thread_local
+
+C数据类型
+1、基本类型
+他们是算术类型，包括两种类型：整数类型和浮点类型。
+2、枚举类型
+基本也是算术类型，备用来定义在程序中只能赋予其一定的离散整数值得变量。
+3、void类型
+类型说明符void表明没有可用的值。
+4、派生类型
+他们包括：指针类型、数组类型、结构类型、共用体类型和函数类型。
+整数类型
+char 		1字节	-128到127 或 0 到255
+Unsigned char	1字节	0到255
+Signed char	1字节	-128到127
+int 		2或4个字节-32768到32767
+Short		2个字节	-32768到32768
+unsigned short	2个字节	0到65535
+Long		4个字节	-2.147483648到2.147483647
+unsigned long	4个字节	0到4294967295
+
+Void 类型
+1、函数返回为空
+2、函数参数为空
+3、指针指向void
+类型为void*的指针代表对象的地址，而不是类型。例如，内存分配函数void*malloc(size_t size);返回指向void的指针，可以转换为任何类型。
+
+Char 通常是一个字节(8位)。这是一个整数类型。
+Int 对及其而言，整数的最自然的大小。
+Float 单精度浮点值。单精度是这样的格式，1位符合，8位指数，23位小数。
+Double 双精度浮点值。双精度是1位符号，11位指数，52位小数。
+Void 表示类型的缺失。
+C语言中的变量定义
+变量定义就是告诉编译器在何处创建变量存储，以及如何创建变量的存储。变量定义指定一个一个数据类型，
+并包含了该类型的一个或多个变量的列表
+不带初始化的定义：带有静态存储持续时间的变量会被隐士初始化为NULL（所有字节的值都是0），其他所有变量的初始值是未定义的。
+
+变量声明想编译器保证变量以指定的类型和名称存在，这样编译器在不需要知道变量完整细节的情况下也能继续进一步的编译。变量声明只在编译时有他的意义，在程序链接时编译器需要知道实际的变量声明。
+变量声明有两种情况。
+1、一种是需要建立存储空间的。例如：Int a 在声明的时候就已经建立了存储看空间。
+2、另一种是不需要建立存储空间的，通过使用extern关键字声明变量名而不定义它。例如:extern int a 期中变量a可以在别的文件中定义的。
+extern int i；// 声明不是定义
+int I;// 声明，也是定义
+
+1、C中的左值和右值
+C中有两种类型的表达式：
+1、左值（lvaleu）：指向内存位置的表达式被称为左值(lvalue)表达式。左值可以出现在赋值号的左边或右边。
+2、右值（rvalue）：术语右值(rvalue)指的是存储在内存中某些地址的数值。
+右值是不能对其进行赋值的表达式，也就是说，右值可以出现在赋值号的右边，但不能出现在赋值号的左边。
+变量是左值，因私可以出现在赋值号的左边。数值型的字面值是右值，因此不能被赋值，不能出现在赋值号的左边。
+
+
+<< 二进制左移运算符。讲一个数的各二进制位全部右移若干位，正数左补0，负数左补1，右边丢弃。
+
+>>二进制右移运算符。讲一个数的各二进制位全部右移若干位，正数左补0，负数左补1，右边丢弃。
+
+
+
+C函数
+Strcpy(s1,s2);复制字符串s2到字符串s1。
+Strcat(s1,s2);连接字符串s2到字符窜s1的末尾。
+strlen(s1);返回字符串s1的长度。
+strcmp(s1,s2);如果s1和s2是相同的，则返回0；如果s1<s2则返回小于0；如果s1>s2则返回大于0。
+strchar(s1,ch);
+strchr(s1,ch);返回一个指针，指向字符串s1中字符ch的第一次出现的位置。
+strstr(s1,s2);返回一个指针，指向字符串s1中字符串s2的第一次出现的位置。
+
+C结构体
+C数组允许定义可存储相同类型数据项的变量，结构是C编程中另一种自定义的可用的数据类型，它允许您存储不同类型的数据项。
+结构用于表示一条记录，假设您想要跟踪图书馆中书本的动态，您可能需要跟踪每本书的下列属性：
+Title
+Author
+Subject
+Book ID
+
+定义结构
+为了定义结构，您需要使用struct语句。struct语句的格式如下：
+Struct tag {
+member-list
+Member-list
+...
+} variable-list;
+
+Tag是结构体标签。
+Member-list 是标准的变量定义，比如int I；或者float f,或者其他有效的变量定义。
+Variable-list结构变量，定义在结构的末尾，最后一个分号之前，您可以定义一个或多个结构变量。下面的声明Book结构的方式：
+Struct Books
+{
+Char title[50];
+Char author[50];
+Char subject[100];
+Int book_id;
+}book;
+
+一般情况下，tag、member-list、variable-list这3部分至少要出现2个。以下为实例：
+
+Struct
+{
+Int a;
+Char b;
+Double c;
+} s1;
+
+Struct SIMPLE
+{
+	int	a;
+	char 	b;
+	double 	c;
+}
+
+用SIMPLE标签的结构体，另外声明了变量t1、t2、t3
+Struct SIMPLE t1,t2[20],*t3;
+
+Typedef struct {
+Int a;
+Char b;
+Double c;
+}
+
+Simple2 u1,u2[20],*u3;
+
+带有预定义宽度的变量称为位域。位域可以存储多余1位的数，列如，需要一个变量来存储从0到7的值，您可以定义一个宽度为3的位域，如下：
+Struct
+{
+Unsigned int age:3;
+}Age;
+
+C typedef
+
+Typedef unsigned char byte;
+C 语言把所有的设备都当作文件。所以设备(比如显示器)被处理的方式与文件相同。以下三个文件会在程序执行时自动打开，以便访问键盘和屏幕。
+
+
+C文件读写
+
+打开文件
+您可以使用fopen()函数来创建一个新的文件或者打开一个已有的文件，这个调用会初始化类型FILE的一个对象，类型FILE包含了所有用来控制流的必要的信息。下面是这个函数调用的原型：
+FILE *fopen(const char *fileName,const char *mode);
+在这里，fileName是字符串，用来命名文件，访问模式mode的值可以是下列值中的一个：
+r 打开一个已有的文本文件，允许读取文件。
+W 打开一个文本文件，允许写文件，如果文件不存在，则会创建一个新文件。在这里，您的程序会从文件的开头写入内容。如果文件存在，则该会被截断为零长度，重新写入。
+a 打开一个文本文件，以追加模式写入文件。如果文件不存在，则会创建一个新文件。在这里，您的程序会在已有的文件内容中追加内容。
+r+打开一个文本文件，允许读写文件。
+w+打开一个文本文件，允许读写文件。如果文件已存在，怎文件会被截断为零长度，如果文件不存在，则会创建一个新文件。
+a+打开一个文本文件，允许读写文件。如果文件不存在，则会创建一个新文件。读取会从文件的开头开始，写入则只能是追加模式。
+如果处理的是二进制文件，则需要使用下面的访问模式来取代上面的访问模式：
+"rb","wb","ab","rb+"，"r+b","wb+","w+b","ab+","a+b"
+关闭文件
+为了关闭文件，请使用fclose()函数。函数的原型如下：
+Int fclose(FILE *fp);
+写入文件
+Int fputc(int c,FILE *fp);
+函数fputc()把参数c的字符值写入到fp所指向的输出流中。如果写入成功，它会返回写入的字符，如果发生错误，则会返回EOF。您可以使用下面的函数来把一个以null结尾的字符串写入到流中:
+Int fputs(const char *s,FILE *fp);
+函数fputs()把字符串s写入到fp所指向的输出流中。如果写入成功，他会发挥一个非负值，如果发生错误，则会返回EOF。
+
+FILE *fp = NULL;
+fp = fopen("/tmp/test.txt", "w+");
+fprintf(fp,"this is testing for fprintf...\n");
+fputs("this is testing for fputs...\n",fp);
+fclose(fp);
+上面的代码被编译和执行时，它会在/tmp目录中创建一个新的文件test.txt,并使用两个不同的函数写入两行。接下来让我们来读取这个文件。
+Int fgetc(FILE *fp);
+fgetc()函数从fp所指向的输入文件中读取一个字符。返回值是读取的字符，如果写入错误则返回EOF。下面的函数允许您从流中读取一个字符串：
+char *fgets(char *buf,int n, FILE *fp);
+函数fgets()从fp所指向的输入流中读取n-1字符。它会把读取的字符串复制到缓冲区buf，并在最后追加一个null字符来终止字符串。
+如果这个函数在读取最后一个字符串之前就遇到一个换行符'\n'或文件的末尾EOF，则只会返回读取到的字符，包括换行符。您也可以使用int fscanf(file *fp,const char *format,...)函数来从一个文件中读取字符串，但是在遇到一个空格和换行符时，它会停止读取。
+
+#define 	定义宏
+#include	包含一个源代码文件
+#undef 		取消已定义的宏
+#ifdef		如果宏已经定义，则返回真
+#if		如果给定条件为真，则编译下面代码
+#else		#if的代替方案
+#elif		如果前面的#if给定条件不为真，当前条件为真，则编译下面的代码
+#endif		结束一个#if...#else条件编译块
+#error		当遇到标准标准错误，输出错误消息
+#pragma		使用标准化方法，向编译器发布特殊的命令到编译器中
+#define MAX_ARRAY_LENGTH 20
+#include <stdio.h>
+#include "myheader.h"
+#undef	FILE_SIZE	
+#define	FILE_SIZE 42
+#ifndef	MESSAGE
+#define	MESSAGE "You wish!"
+#endif
+#ifdef	DEBUG
+/* your debugging statements here **/
+#endif
+
+这个指令告诉CPP如果定义了DEBUG，则执行处理语句。在编译时，如果您向gcc编译传递了-DDEBUG开关量，这个指令就非常有用。它定义了DEBUG，您可以在编译期间随时开启或关闭调试。
+
+_DATE_ 	当前日期，一个以 "MMMM DD YYYY"格式表示的字符常量。
+_TIME_	当前时间，一个以 "HH:MM:SS"格式表示的字符常量。
+_FILE_	会包含当前文件名，一个字符串常量。
+_LINE_	这会包含当前行号，一个十进制常量。
+_STDC_	编译器以ANSI标准编译时，则定义为1。
+
+
+C预处理器提供了下列的运算符来帮助您创建宏：
+宏延续运算符(\)
+一个宏通常与在一个单行上。但是如果宏太长，一个单行容纳不下，则使用宏延续运算符(\)
+
+#define	message_for(a,b) \ printf(#a " and " #b ": We love you!\n")
+
+字符串常量化运算符 (#)
+在宏定义中，当需要把一个宏的参数转换为字符串常量时，则使用字符串常量化运算符(#)。在宏中使用的该运算符有一个特定的参数或参数列表。例如：
+#define	message_for(a,b) \ printf(#a " and " #b ": We love you!\n")
+当上面的代码被编译和执行时，它会长生下列结果：
+
+标记黏贴运算符(##)
+宏定义内的标记黏贴运算符(##)会合并两个参数。它允许在宏定义中两个独立的标记被合并为一个标记。例如：
+#define tokenpaster(n) printf("token"#n " = %d",token##n)
+上面的代码编译和执行，它会产生下列结果：
+
+Token34 = 40
+这是怎么发生的，因为这个实例会从编译器长生下列的实际输出:
+printf("token34 = %d",token34);
+这个实例演示了token##n会连接到token34中，在这里，我们使用了字符串常量化运算符(#)和标记黏贴运算符(##)
+
+defined()运算符
+预处理器define运算符是用在常量表达式中的，用来确定一个标志符是否已经使用#define定义过。如果定义的标志符已定义，则值为真(非零)。如果指定的标志符未定义，则值为假（零）。下面的实例演示了defined()运算符的用法：
+
+#if !defined (MESSAGE)
+#define MESSAGE "You wish!"
+#endif
+
+Int main(void)
+{
+
+prinft("Here is the message:%s\n",MESSAGE);
+Return 0;
+}
+
+当上面的代码被编译和执行时，他会长生下列结果：
+Here is the message: You wish!
+
+Int square(int x) {
+return x * x;
+}
+
+
+我们可以使用宏重写上面的代码，如下：
+#define square(x) ((x) * (x))
+
+在使用带有参数的宏之前，必须使用#define 指令定义。参数列表是括在圆括号内，且必须紧跟在宏名称的后边。宏名称和做圆括号之间不允许有空格。例如：
+#define MAX(x,y) ((x) >(y) ? (x):(y))
+
+Int main(void) 
+{
+printf("Max between 20 and 10 is %d\n",MAX(10,20));
+return 0;
+}
+
+Max between 20 and 10 is 20
+
+
+C 内存管理
+Void *calloc(int num,int size);
+在内存中动态地分配num个长度为size的连续空间，并将每个字节都初始化为0,所以他的结果是分配了num *size个字节长度的内存空间，每个字节的值都是0
+
+void free(void *address);
+该函数释放address 所指向的内存块，释放的动态分配的内存空间。
+Void malloc(int num)
+在堆区分配一块指定大小的内存空间，用来存放数据。在块内存空间在函数执行完成后不会被初始化，他们的值是未知的。
+Void *realloc（void *address, int newsize);
+该函数重新分配内存，把内存扩展到newsize。
+
+注意：void * 类型表示未确定类型的指针。C、C++规定void*类型可以通过类型转换为其他类型的指针。
+动态分配内存
+编程时，如果您预先知道数组的大小，那么定义数组时就比较容易。例如，一个存储人名的数组，它最多容纳100个字符，所以您可以定义数组，如下所示：
+Char name[100];
+但是，如果您预先不知道需要存储的文本长度，例如您向存储有关一个主题的详细描述。在这里，我们需要定义一个指针，该指针指向未定义所需要内存大小的长度，后续在根据需求来分配内存，如下所示：
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+Int main() 
+{
+Char name[100];
+Char *description;
+strcpy(name,"zara Ali");
+/* 动态分配内存*/
+Description = (char *)mclloc(200 *sizeof(char));
+if(description == NULL) 
+{
+fprintf(stderr,"Error - nuable to allocate required memory\n");
+}
+Else
+{
+strcpy(description, "zara Ali aDPS student in class 10th");
+}
+printf("Name = %s\n",name);
+printf("Description:%s\n",description);
+}

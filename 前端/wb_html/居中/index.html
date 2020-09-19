@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水平居中和垂直居中</title>
+<!--
+
+    水平居中：
+    行内标签和行内块级标签直接在父标签中设置
+    text-aligin:center
+    块级标签：在自身设置margin:0 auto;
+
+    垂直居中：
+    行内标签和行内块级标签直接在父标签中设置
+   line-height = height
+   块级标签:定位和平移
+   图片的居中
+
+
+-->
+    <style>
+        #main {
+            width: 500px;
+            height: 250px;
+            background-color: red;
+        /*让子标签和内容水平居中*/
+            text-align: center;
+        /*垂直居中*/
+        /*    line-height: 250px;*/
+        /*定位*/
+            position: relative;
+        }
+        span {
+            background-color: blue;
+        }
+        .test1 {
+            background-color: orange;
+            height: 100px;
+            width: 200px;
+        /*重写行高*/
+            line-height: 100px;
+        /*块级标签水平居中*/
+        /*    margin-left: auto;*/
+        /*    margin-right: auto;*/
+            margin: 0 auto;
+        /*定位*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%) ;
+        }
+    </style>
+
+<!--    <style>-->
+<!--        #main{-->
+<!--            width: 300px;-->
+<!--            height: 150px;-->
+<!--            background-color: red;-->
+<!--            text-align: center;-->
+<!--            padding: 1px;-->
+<!--        }-->
+<!--        .test1{-->
+<!--            background-color: yellow;-->
+<!--            line-height: 150px;-->
+<!--        }-->
+<!--    </style>-->
+</head>
+<body>
+<div id="main">
+<!--行内标签-->
+<!--    <span>行内</span>-->
+<!--行内-块级标签-->
+<!--    <button>按钮</button>-->
+<!--块级标签-->
+    <div class="test1">我是MT</div>
+
+</div>
+</body>
+</html>

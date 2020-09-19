@@ -1,0 +1,31 @@
+MJProperty 包装一个成员属性---来自哪一个对象中一个属性|name|type~（类型基本id对象)|
+属性：
+c语言的变量该变量获取属性的所有信息：property
+成员属性的名称：name
+成员属性的类型该类型指明该属性是基本类型~bool|id类型|对象类型~是否来自系统Foundation|是否纸质KVC
+成员属性来源哪一个类：srcClass
+
+
+propertyKeysDict ：字典 
+objectClassInArrayDict ：字典
+
+
+// 通过c语言变量属性生成一个OC语言的属性对象
++ (instancetype)cachedPropertyWithProperty:(objc_property_t)property
+
+// 通过property 获取attrs的字符串 取code 通过code 生成一个类型对象
+- (void)setProperty:(objc_property_t)property
+
+// 获取成员变量的值 支持KVC ？ 用name取值：NSNull.null
+- (id)valueForObject:(id)object
+// 设置成员变量的值 支持KVC ？ setValue:
+- (void)setValue:(id)value forObject:(id)object
+
+
+
+
+
+
+
+
+

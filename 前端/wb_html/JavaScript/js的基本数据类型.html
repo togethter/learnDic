@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js的基本数据类型</title>
+    <script>
+        // 基本数据类型
+        var name = 'jack';//string
+        var name1 = 'rose';//string
+
+        var age = 18;//number
+        var money = true;//boolean
+        var score = null;//object
+        var number = undefined;//undefined
+        //1 打印
+        console.log(name,age,score);
+        //1.1 判断变量的真实类型 typeof
+        console.log(typeof name,typeof age,typeof score)
+        //2 运算
+        //2.1 字符串的拼接
+        var newName = name+ '-' + name1 + '陈赫';
+        console.log(newName);
+        //2.2 不同类型的变量进行拼接
+        /*
+        * 1、运算时从左到右
+        * 2、任何类型的变量和string类型的变量进行拼接，都会被强制转为string类型
+        * */
+        var str1 = (10 + '10') + 10 + 10;
+        var str2 = ('10'+ '10') + 10;
+        var str3 = '10' + (10 + '10');
+        console.log(str1);//10101010
+        console.log(str2);//101010
+        console.log(str3);//101010
+        //3 数组 new Array() --->object数组中可以放任何的内容
+        // var numbers = new Array();
+
+        // var numbers = [];
+        // console.log(numbers, typeof  numbers)
+        var numbers = ['张三',10,-100,newName,score];
+        //3.1 数组下表取值
+        console.log(numbers[0]);
+        // 3.2遍历
+        for (var i = 0;i < numbers.length;i++){
+            console.log(numbers[i]);
+        }
+        // 3.3 增加和删除元素
+        numbers.pop();
+        for (var i = 0;i < numbers.length;i++){
+            console.log(numbers[i]);
+        }
+        numbers.push('哈哈哈');
+        for (var i = 0;i < numbers.length;i++){
+            console.log(numbers[i]);
+        }
+        // 4.类库--->Math 运算
+        var score = [10,2332,0];
+        // var minScore = Math.min(210,2222,3333);
+        var minScore = Math.min.apply(null,score)
+        console.log(minScore);
+        console.log(Math.PI);
+
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

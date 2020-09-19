@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>常见的选择器</title>
+    <style>
+        /**标签选择器*/
+        div{
+            color: red;
+        }
+        p{
+         color: blue;
+        }
+        /**类选择器*/
+        .test1{
+            color: green;
+        }
+        /*id选择器 全局只有一个*/
+        #main{
+            font-size: 40px
+        }
+    /*并列选择器*/
+        #main,.test1 {
+            border: 10px solid yellow;
+        }
+    /*复合选择器*/
+    div.test3{
+        color: aqua;
+    }
+    /*后代选择器*/
+    div p a{
+        color: red;
+    }
+    /*直接后代选择器 直接作用于儿子孙在作用不到*/
+    div>a{
+         color: cornsilk;
+     }
+    /* 相邻兄弟选择器*/
+      div+p {
+          color: red;
+      }
+    /* 属性选择器*/
+    /*    div[name] {
+        color:red;
+    }
+        div[name][age] {
+        color:red;
+        }
+    */
+    /*伪类选择器*/
+        /* 键盘输入焦点*/
+        input:focus{
+        /*去除外边线*/
+            outline: none;
+        /*改变边框的颜色    */
+            border-color: red;
+        /*改变宽度高度    */
+            width: 500px;
+            height: 50px;
+            border: 1px solid red;
+        }
+        /* 当鼠标悬浮在元素上方时，向元素添加样式*/
+        div#main:hover {
+            background-color: purple;
+            width: 200px;
+            height: 100px;
+        }
+        /*伪元素*/
+        p.word:first-letter {
+            font-size: 30px;
+        }
+        
+    </style>
+</head>
+<body>
+<div id="main">我是div标签</div>
+<div class="test3">我是div标签</div>
+<div>我是div标签</div>
+<div>
+    <p>
+        <a href="#">我是孙子超链接标签</a>
+    </p>
+    <a>我是儿子超链接标签</a>
+</div>
+<p>我是段落标签</p>
+<p>我是段落标签</p>
+<p class="word">我是段落</p>
+<p class="test1" >我是段落标签</p>
+<div class="test1">我是div标签</div>
+<input placeholder="我是占位文字">
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+1、/** 这个数组中的属性名才会进行字典和模型的转换 */
+typedef NSArray * (^MJAllowedPropertyNames)(void);
+2、/** 这个数组中的属性名才会进行归档 */
+typedef NSArray * (^MJAllowedCodingPropertyNames)(void);
+3、/** 这个数组中的属性名将会被忽略：不进行字典和模型的转换 */
+typedef NSArray * (^MJIgnoredPropertyNames)(void);
+4、/** 这个数组中的属性名将会被忽略：不进行归档 */
+typedef NSArray * (^MJIgnoredCodingPropertyNames)(void);
+5、 遍历所有的类
++ (void)mj_enumerateClasses:(MJClassesEnumeration)enumeration;
++ (void)mj_enumerateAllClasses:(MJClassesEnumeration)enumeration;
+
+总结
+A:
+字典和模型转换
+不进行字典和模型的转换
+属性名进行归档
+属性名不进行归档
+B:
+MJAllowedPropertyNamesKey
+MJIgnoredPropertyNamesKey
+MJAllowedCodingPropertyNamesKey
+MJIgnoredCodingPropertyNamesKey
+创建一个单利单利中初始化四个字典，字典中存储需要A中的一些操作

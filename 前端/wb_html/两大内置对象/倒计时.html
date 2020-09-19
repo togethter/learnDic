@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background-color: black;
+            text-align: center;
+            padding-top: 100px;
+            font-size: 150px;
+        }
+        div{
+            color: red;
+        }
+        img{
+            /*隐藏图片*/
+            display: none;
+        }
+        p{
+            color: orangered;
+            /*隐藏文字*/
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="time">10</div>
+<img id="icon" src="./img/renwu01.png" alt="">
+<p id="word">我对你的爱滔滔不绝...</p>
+
+<script>
+    (function () {
+        // 1.拿到对应的标签
+        var time = document.getElementById('time');
+        var icon = document.getElementById('icon');
+        var word = document.getElementById('word');
+
+        //2.倒计时 1000ms = 1s 每隔1s执行
+        //2.1动态创建变量
+        var timer = setInterval(function () {
+            // 倒计时
+            time.innerText -= 1;
+            // if (time.innerText < 0) time.innerText = 10;
+            if (time.innerText == 0){
+                clearInterval(timer);
+                // 隐藏和显示对应的标签 注意：标签如果调用css的属性必须加style
+                time.style.display = 'none';
+                icon.style.display = 'inline-block';
+                word.style.display = 'block';
+            } 
+        },1000);
+
+    })();
+</script>
+</body>
+</html>

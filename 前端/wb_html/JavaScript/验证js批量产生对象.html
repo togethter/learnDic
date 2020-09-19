@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script >
+        // 构造函数产生对象
+        function Dog() {
+        // 属性
+            this.name = null;
+            this.age = null;
+        // 方法
+            this.eat = function (something) {
+                console.log('狗名' + this.name + '年龄' + this.age + '正在吃' + something)
+            }
+        }
+
+        // 批量产生对象
+        var dog1 = new Dog();
+        var dog2 = new Dog();
+        dog1.name = '狗妮';
+        dog1.age = 16;
+        dog2.name = '啊啊';
+        dog2.age = 1;
+        dog1.eat('五花肉');
+        dog2.eat('喝水');
+        console.log(dog1,dog2);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

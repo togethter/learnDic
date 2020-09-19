@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS选择器优先级别</title>
+<!--
+  通配符:*代表所有的标签
+  作用：设置-写全局的公共属性 字体大小 字体颜色
+  缺点：
+      1、性能不是很好(递归)
+      2、优先级别最低
+      3、不利于SEO优化(SEO搜索引擎)
+  -->
+<!--
+    选择器的优先级别
+    1、相同类型的选择器：a就近原则 b、叠加原则
+    2、不相同类型的选择器
+        类选择器>标签选择器
+        id选择器>类选择器>标签选择器
+
+        important>内联>id>类|标签|伪类|属性选择|伪元素>通配符>继承
+
+-->
+    <style>
+        *{/*权值0 */
+            font-size: 50px;
+        }
+    /*复合选择器*/
+        div.test1 {/*权值1+10*/
+            color: aqua;
+        }
+        div#main {/*权值1+100*/
+            color: deeppink;
+        }
+    /*    id选择器*/
+        #main {/*权值100*/
+            color: deeppink;
+        }
+    /*    类选择器*/
+        .test1 {/*权值10*/
+            color: green;
+        }
+        .test2{/*权值10*/
+            color: blue;
+        }
+        div{/*权值1*/
+            color: yellow;
+        }
+        /*    标签选择器*/
+        div{/*权值1000*/
+            color: red !important;
+         }
+        /*原则:选择器的权值加到一起，大的优先；如果权值相同，后定义的优先*/
+    </style>
+</head>
+<body>
+<div id="main"  class="test1 test2">选择器的优先级别</div>
+</body>
+</html>

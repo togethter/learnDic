@@ -1,0 +1,20 @@
+Dart环境搭建:
+要在我们本地开发Dart程序的话首先需要安装Dart SDk
+官方文档：https://dart.dev/get-dart
+windows（推荐）
+http://www/gekorm.com/dart-windows/
+
+mac:
+如果mac电脑没有安装brew这个工具首先第一步需要安装他：https://brew.sh/
+
+在终端输入（
+brew tap dart-lang/dart
+brew install dart 安装Dart）
+
+Dart 开发工具：
+Dart的开发工具有很多：IntelliJ IDEA 、 WebStorm、Atom、Vscode等
+
+使用 Vscode 中配置Dart
+1、找到vscode插件安装dart
+2、找到vscode插件安装code runner   Code Runner 可以运行我们的文件
+

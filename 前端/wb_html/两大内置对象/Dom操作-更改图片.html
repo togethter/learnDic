@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 函数 更改图片
+        function changeImg() {
+            // 1、拿到图像标签
+            let img = document.getElementsByClassName('icon')[0];
+            // console.log(img);
+            // 2、修改scr 属性
+            img.src = '../imgs/h5新增标签.png';
+        }
+    </script>
+</head>
+<body>
+
+<img class="icon" src="../imgs/share_btn.png" alt="风景">
+<p></p>
+<button onclick="changeImg();">更改图片</button>
+</body>
+</html>

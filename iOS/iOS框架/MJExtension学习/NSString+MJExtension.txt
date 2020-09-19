@@ -1,0 +1,16 @@
+// 驼峰转下划线（loveYou -> love_you
+// 驼峰：loveYou 模式
+- (NSString *)mj_underlineFromCamel;
+// 下划线转驼峰（love_you -> loveYou)
+- (NSString *)mj_camelFromUnderline;
+// 首字母变大写
+- (NSString *)mj_firstCharUpper;
+//  首字母变小写
+- (NSString *)mj_firstCharLower;
+// 
+- (BOOL)mj_isPureInt;
+
+- (NSURL *)mj_url;
+
+// 获取C语言的字符 %c
+- (unichar)characterAtIndex:(NSUInteger)index;

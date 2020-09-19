@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script >
+        /*
+        * this所在的函数在那个对象中，this就代表这个对象
+        * */
+        /*
+        * [] {} 都是js中的对象,主要是用于数据的传递
+        * */
+        // 1.1传统产生对象 属性 和 方法
+        var dog = {
+
+            name:'旺财',
+            age:16,
+            height:1.55,
+            dogFriends:['啊哈','狗妮'],
+            // 行为 -->方法
+            eat:function (something) {
+                // 备份指针
+                // var self = this;
+                console.log(this.name+ something);
+            },
+            run:function (someWhere) {
+            console.log(this.name +'跑'+someWhere);
+            },
+        };
+        //1.2 如何调用对象中属性和方法?
+        dog.name = '小白';
+        console.log(dog.name,dog.age,dog.height)
+        dog.eat('吃野鸡！');
+        dog.run('天河公园');
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

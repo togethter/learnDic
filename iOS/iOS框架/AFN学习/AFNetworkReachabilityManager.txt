@@ -1,0 +1,39 @@
+AFNetworkReachabilityManager.h
+
+    AFNetworkReachabilityStatusUnknown          = -1,
+    AFNetworkReachabilityStatusNotReachable     = 0,
+    AFNetworkReachabilityStatusReachableViaWWAN = 1,
+    AFNetworkReachabilityStatusReachableViaWiFi = 2,
+
+AFNetworkReachabilityStatus
+reachable
+reachableViaWWAN
+reachableViaWiFi
+
++ (instancetype)sharedManager;
+
++ (instancetype)manager;
+
++ (instancetype)managerForDomain:(NSString *)domain;
+
++ (instancetype)managerForAddress:(const void *)address
+
+- (instancetype)initWithReachability:(SCNetworkReachabilityRef)reachability
+
+- (void)startMonitoring
+
+- (void)stopMonitoring
+
+- (NSString *)localizedNetworkReachabilityStatusString
+
+- (void)setReachabilityStatusChangeBlock:(nullable void (^)(AFNetworkReachabilityStatus status))block
+
+FOUNDATION_EXPORT NSString * const AFNetworkingReachabilityDidChangeNotification;
+
+FOUNDATION_EXPORT NSString * const AFNetworkingReachabilityNotificationStatusItem
+
+NSString * AFStringFromNetworkReachabilityStatus(AFNetworkReachabilityStatus status)
+
+
+NSString * const AFNetworkingReachabilityDidChangeNotification = @"com.alamofire.networking.reachability.change";
+NSString * const AFNetworkingReachabilityNotificationStatusItem = @"AFNetworkingReachabilityNotificationStatusItem";

@@ -1,0 +1,50 @@
+
+// 信号量创建
+#define MJExtensionSemaphoreCreate \
+static dispatch_semaphore_t signalSemaphore; \
+static dispatch_once_t onceTokenSemaphore; \
+dispatch_once(&onceTokenSemaphore, ^{ \
+    signalSemaphore = dispatch_semaphore_create(1); \
+});
+
+
+// 信号量-1
+#define MJExtensionSemaphoreWait \
+dispatch_semaphore_wait(signalSemaphore, DISPATCH_TIME_FOREVER);
+
+// 信号量+1
+#define MJExtensionSemaphoreSignal \
+dispatch_semaphore_signal(signalSemaphore);
+
+// 过期
+#define MJExtensionDeprecated(instead) NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, instead)
+
+// 日志输出
+#ifdef DEBUG
+#define MJExtensionLog(...) NSLog(__VA_ARGS__)
+#else
+#define MJExtensionLog(...)
+#endif
+
+
+
+
+// .h 中
+#ifndef __MJExtensionConst__H__
+#define __MJExtensionConst__H__
+
+extern NSString *const MJPropertyTypeInt;
+
+#endif
+
+// .m 中
+#ifndef __MJExtensionConst__M__
+#define __MJExtensionConst__M__
+
+NSString *const MJPropertyTypeInt = @"i";//int
+
+
+#endif
+
+
+

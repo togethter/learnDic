@@ -1,0 +1,8 @@
+NSObject+MJProperty 遍历一个类型生成所有property属性
+// 遍历所有成员
++ (void)mj_enumerateProperties:(MJPropertiesEnumeration)enumeration
+
+// 获取一个类中的所有属性：包装成一个‘MJProperty’ - 属性key以及字典对应 模型中某一个数组封装成某一种模型的数组 ||| 讲封装成的数据源缓存起来！！
++ (NSMutableArray *)properties
+
+

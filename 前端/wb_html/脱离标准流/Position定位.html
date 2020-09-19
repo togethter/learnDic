@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Position定位</title>
+<!--
+子绝父相
+ -->
+    <style>
+        .test1 {
+            width: 500px;
+            height: 300px;
+            background-color: red;
+            /*定位:只要不是static*/
+            position: relative;
+            margin: 60px;
+        }
+        .test2{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            /*border-radius: 50px;*/
+            /*定位*/
+            position: absolute;
+        /*上下左右*/
+            left: 10px;
+            top: 10px;
+        /*右下角*/
+        /*    right: 0;*/
+            /*bottom: 0;*/
+        /*居中*/
+        /*    left: 50%;*/
+        /*    top: 50%;*/
+        /*平移*/
+        /*    transform: translate(-50%,-50%);*/
+        }
+        .test3{
+            background-color: blue;
+        }
+        .test4{
+            background-color: purple;
+        /*相对与浏览器进行定位*/
+            position: fixed;
+        }
+
+    </style>
+</head>
+<body>
+<div class="test1">
+    <div class="test2"></div>
+    <div class="test3">大声达克赛德哈斯达斯柯达的</div>
+
+</div>
+<div class="test4">相对于浏览器进行对位</div>
+</body>
+</html>

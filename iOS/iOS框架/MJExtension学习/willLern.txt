@@ -1,0 +1,4 @@
+1、NSScanner
+2、CFURLCreateStringByAddingPercentEscapes 过期的
+3、创建单利
+static const char MJAllowedPropertyNamesKey = '\0';

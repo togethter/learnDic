@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="main">
+    <div class="pic">
+        <img src="img/1.jpg" alt="aad">
+        <img src="img/1.jpg" alt="aad">
+        <img src="img/1.jpg" alt="aad">
+        <img src="img/1.jpg" alt="aad">
+        <img src="img/1.jpg" alt="aad">
+
+    </div>
+    <div class="word">
+        <p>装修</p>
+        <p>装修</p>
+        <p>装修</p>
+        <p>装修</p>
+        <p>装修</p>
+
+    </div>
+    <button>显示</button>
+    <button>隐藏</button>
+    <button>来回切换</button>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        /*
+         JS存在的缺点:
+         1、复杂的dom操作
+         2、复杂的特效实现，动画效果；
+         3、存在CSS和浏览器的兼容问题；
+         jquery的优点:
+         1、轻松实现dom操作
+         2、轻松实现复杂的特效实现，动画效果；
+         3、几乎不存在CSS和浏览器的兼容问题；
+         */
+        // 1.1 $() 这就是jquery对象，把js对象包装name $(name)
+
+        //1.2 dom操作CUD -> css的选择器 #main .pic img -->jquery中获取标签$('#main.pic img')
+
+        // 获取标签
+        // console.log($('#main').attr('id'));
+        // console.log($('#main .pic').attr('class'));
+        // console.log($('#main .pic img').attr('src'));
+        // // 修改标签的属性
+        // $('img').attr('src','img/2.jpg');
+        // $('img').attr({'src':'img/3.jpg','alt':'房子好大'});
+
+        // 查看标签中内容
+        // console.log($('p').text());
+        // console.log($('#main').text());
+        // 修改标签中的内容
+        // $('p').text('嗯，不错哦!');
+        // $('#main').html('<img src="img/1.jpg">');
+
+        // 1.3常见事件
+        $('button').eq(0).on('click',function () {
+            $('img').show();
+            $('p').show();
+        })
+        $('button').eq(1).on('click',function () {
+            $('img').hide();
+            $('p').hide();
+        })
+
+        // 来回切换
+        $('button').eq(2).on('click',function () {
+            $('img').toggle(2000); // ms () (200) ('slowe')
+            $('p').toggle(2000);
+        })
+        // 遍历
+        var numbers = ['张三',21,33,55,66];
+        $.each(numbers,function (index,value) {
+        console.log(index,value);
+        });
+        // 获取对象
+       console.log($.inArray('张三',numbers));
+       // 1.5 设计标签的样式
+       $('#main').css({
+           backgroundColor:'red',
+           border:'4px solid yellow'
+       });
+
+    </script>
+
+</div>
+</body>
+</html>

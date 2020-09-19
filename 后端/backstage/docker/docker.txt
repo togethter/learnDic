@@ -1,0 +1,167 @@
+
+一、安装Docker
+1 安装
+1.1 linux版本
+1.1.1 更新yum 版本
+yum info yum
+yum update
+yum makecache fast
+
+1.1.2 安装docker
+yum install docker-ce
+
+安装指定版本
+yum list docker-ce.x86_64 --showduplicates | sort -r
+yum install docker-ce-<VERSION>
+
+1.1.3 启动 Docker 后台服务
+service docker start  
+
+
+Redirecting to /bin/systemctl start docker.service
+或者
+systemctl start docker
+
+测试运行 hello-world,，并在容器内运行
+docker run hello-world
+
+1.1.4升级、卸载
+yum makecache fast  //然后重新安装
+yum remove docker-ce 
+rm -rf /var/lib/docker //删除docker存储文件
+
+1.2 windows版本
+1.2.1 下载并安装
+https://docs.docker.com/docker-for-windows/install/#download-docker-for-windows 
+1.2.1 配置阿里云镜像
+阿里云->容器镜像服务->镜像加速器获取地址，然后复制到Daemon的 mirrors中 
+1.3 mac os 安装
+----------------
+2  Docker常用命令
+2.1 Docker镜像常用命令
+搜索镜像
+docker search java --limit 10 -s 10 
+
+下载镜像
+docker pull java
+docker pull java:9  //标签拉取
+docker pull my.anxin.com/java:9	//从指定 Docker Registry中下载标签为9的java镜像
+
+镜像列表
+docker images
+docker images java
+docker images java:8  --digests	//显示摘要
+
+删除镜像
+docker rmi hello-world -f 
+
+保存镜像
+docker save java:9 > test.jar rabbitmy > mq.jar 	//导出docker镜像，到linux本地当前目录
+docker save -o /usr/local/install/test.tar  java:9   //把版本为9.0的java镜像，保存到/usr/local/install目录下，保存名字和格式为test.tar
+docker save -o prod.jar  java:9  mysql:5.7   //-o 输出到文件而非标准输出,将镜像仓库中的java和mysql打包
+
+
+docker save的应用场景是，如果你的应用是使用docker-compose.yml编排的多个镜像组合，但你要部署的客户服务器并不能连外网。这时，你可以使用docker save将用到的镜像打个包，然后拷贝到客户服务器上使用docker load载入。
+
+加载镜像
+docker load < prod.jar
+docker load -i  /usr/local/install/prod.jar	//如果本地镜像库已经存在这两个镜像，将会被覆盖
+
+构建镜像
+TODO TODO Dockerfile
+docker build -t myMirror:1.0 .	//最后的点代表使用当前路径的 Dockerfile 进行构建 
+
+2.2 Docker容器常用命令
+启动已停止的容器
+docker start name //id或name
+
+新建并启动容器
+ docker run java /bin/echo 'hello' 	//若本地不存在该名称的镜像，会自动下载并启动
+
+-d, --detach=false， 指定容器运行于前台还是后台，默认为false
+-i, --interactive=false， 打开STDIN，用于控制台交互
+-t, --tty=false， 分配tty设备，该可以支持终端登录，默认为false
+-u, --user=""， 指定容器的用户
+-a, --attach=[]， 登录容器（必须是以docker run -d启动的容器）
+-w, --workdir=""， 指定容器的工作目录
+-c, --cpu-shares=0， 设置容器CPU权重，在CPU共享场景使用
+-e, --env=[]， 指定环境变量，容器中可以使用该环境变量
+-m, --memory=""， 指定容器的内存上限
+-P, --publish-all=false， 指定容器暴露的端口
+-p, --publish=[]， 指定容器暴露的端口
+-h, --hostname=""， 指定容器的主机名
+-v, --volume=[]， 给容器挂载存储卷，挂载到容器的某个目录
+--volumes-from=[]， 给容器挂载其他容器上的卷，挂载到容器的某个目录
+--cap-add=[]， 添加权限，权限清单详见：http://linux.die.net/man/7/capabilities
+--cap-drop=[]， 删除权限，权限清单详见：http://linux.die.net/man/7/capabilities
+--cidfile=""， 运行容器后，在指定文件中写入容器PID值，一种典型的监控系统用法
+--cpuset=""， 设置容器可以使用哪些CPU，此参数可以用来容器独占CPU
+--device=[]， 添加主机设备给容器，相当于设备直通
+--dns=[]， 指定容器的dns服务器
+--dns-search=[]， 指定容器的dns搜索域名，写入到容器的/etc/resolv.conf文件
+--entrypoint=""， 覆盖image的入口点
+--env-file=[]， 指定环境变量文件，文件格式为每行一个环境变量
+--expose=[]， 指定容器暴露的端口，即修改镜像的暴露端口
+--link=[]， 指定容器间的关联，使用其他容器的IP、env等信息
+--lxc-conf=[]， 指定容器的配置文件，只有在指定--exec-driver=lxc时使用
+--name=""， 指定容器名字，后续可以通过名字进行容器管理，links特性需要使用名字
+--net="bridge"， 容器网络设置:
+bridge 使用docker daemon指定的网桥
+host //容器使用主机的网络
+container:NAME_or_ID >//使用其他容器的网路，共享IP和PORT等网络资源
+none 容器使用自己的网络（类似--net=bridge），但是不进行配置
+--privileged=false， 指定容器是否为特权容器，特权容器拥有所有的capabilities
+--restart="no"， 指定容器停止后的重启策略:
+no：容器退出时不重启
+on-failure：容器故障退出（返回值非零）时重启
+always：容器退出时总是重启
+--rm=false， 指定容器停止后自动删除容器(不支持以docker run -d启动的容器)
+--sig-proxy=true， 设置由代理接受并处理信号，但是SIGCHLD、SIGSTOP和SIGKILL不能被代理
+示例
+运行一个在后台执行的容器，同时，还能用控制台管理：docker run -i -t -d ubuntu:latest
+运行一个带命令在后台不断执行的容器，不直接展示容器内部信息：docker run -d ubuntu:latest ping www.docker.com
+运行一个在后台不断执行的容器，同时带有命令，程序被终止后还能重启继续跑，还能用控制台管理，docker run -d --restart=always ubuntu:latest ping www.docker.com
+为容器指定一个名字，docker run -d --name=ubuntu_server ubuntu:latest
+容器暴露80端口，并指定宿主机80端口与其通信(: 之前是宿主机端口，之后是容器需暴露的端口)，docker run -d --name=ubuntu_server -p 80:80 ubuntu:latest
+指定容器内目录与宿主机目录共享(: 之前是宿主机文件夹，之后是容器需共享的文件夹)，docker run -d --name=ubuntu_server -v /etc/www:/var/www ubuntu:latest
+容器列表
+docker ps 	        //当前正在运行的容器
+docker ps  -a -s    //所有容器,并显示大小
+docker ps -n 3	//最后被创建的 n 个容器
+docker ps -l	//最后被创建的容器
+docker ps -q	//只展示容器的ID,清理容器时非常好用
+
+停止容器
+docker stop java 	//id或name
+docker kill    java 
+
+重启容器
+docker restart	//相当于docker stop,docker start
+
+进入容器
+docker attach name/id 	
+
+nsenter进入容器 TODO
+删除容器
+docker rm name/id 
+
+导出/导入容器
+docker export -o nginx.ar  nginx 	//同save
+docker export nginx.jar  nginx
+
+3  使用Dockerfile构建 Docker镜像
+TODO TODO
+4  使用Docker Registry管理 Docker镜像
+TODO TODO
+5  使用Maven插件构建 Docker镜像
+TODO TODO
+
+
+
+
+
+
+
+
+
+

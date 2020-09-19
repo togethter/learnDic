@@ -1,0 +1,59 @@
+
+1.00 infoPlist key
+相机的权限 NSCameraUsageDescription
+录音的权限 NSMicrophoneUsageDescription
+2.00 手机设备
+AVCaptureDevice
+2.01
+AVCaptureFocusModeLocked// 扫描聚焦上锁
+AVCaptureFocusModeAutoFocus// 扫描聚焦一次自动上锁
+AVCaptureFocusModeContinuousAutoFocus// 根据需要自动聚焦
+
+AVCaptureExposureModeLocked// 扫描曝光上锁
+AVCaptureExposureModeAutoExpose// 扫描自动调整曝光一次后改变曝光模式到上锁
+AVCaptureExposureModeContinuousAutoExposure// 当需要曝光的时候，扫描自动调整曝光
+2.02
+//  是否支持聚焦
+Var :isFocusPointOfInterestSupported
+Funtion: isFocusModeSupported: // 何种聚焦
+
+// 是否支持曝光
+Var :isExposurePointOfInterestSupported
+
+Funtion: isExposureModeSupported:// 何种曝光
+
+Var : subjectAreaChangeMonitoringEnabled// 项目区域改变监听 是否一个接受者应该监听视频区域的改变例如：灯光的改变，实质性的改变等等，如果可以监听则当他监听到本区域的改变，在这个时间内客户端希望重新聚焦，调整曝光去平衡，在改变这个属性值之前，必须调用lockForConfiguration，否则会抛出一个异常，done之后调用unlockForConfiguration去释放锁，允许其他的设备去配置设置。
+
+Var:isFlashAvailable 是否flash可用 支持KVC，
+Discussion: 这个flash可能是不可用的，例如，这个设备过度的加热，需要冷下来
+2.03 AVCaptureConnection 在一个会话中连接输入和输出之间的连接对象
+Discussion:
+会话输入对象：AVCaptureInput 有不止一个input ports,Capture output可以接收更多的数据，例如：AVCaptureMovieFileOutput 的对象，接收视频和录音数据。
+funtion_1 - (BOOL)canAddConnection:(AVCaptureConnection *)connection;
+funtion_2 - (void)addConnection:(AVCaptureConnection *)connection;
+
+当使用 - (void)addOutput:(AVCaptureOutput *)output; 
+		    - (void)addInput:(AVCaptureInput *)input; 的时候connections 被自动的构成
+当正在添加的inputs和outputs之间没有连接的话，需要手动添加connections 去兼容所inputs 和输出。
+可以使用这个连接控制从input到output之间的流
+2.04 AVCapturePhotoOutput 
+Var: availablePhotoCodecTypes// 可支持的压缩编码当前设备的
+Discussion: 为了扫描图片以一种压缩格式，例如JPEG，使用 AVCapturePhotoSettings 初始化一个+ (instancetype)photoSettingsWithFormat:(NSDictionary<NSString *,id> *)format 创建一个图片设置对象，目的是初始化一个字典，串一个key AVCideoCodeKey,他的值必须是数组列表中的一个标识符。
+
+AVCapturePhotoSettings：
+var: highResolutionPhotoEnabled 当这个设置是NO，一个布尔值，指定是否以活动设备和格式支持的最高分辨率捕获静止图像。
+var:availablePreviewPhotoPixelFormatTypes 与照片设置兼容的像素格式类型数组，用于传送预览大小的图像
+2.05 设备的权限 authorizationStatus
+2.06 请求授权  + (void)requestAccessForMediaType:(AVMediaType)mediaType completionHandler:(void (^)(BOOL granted))handler;
+3.07 livePhotoCaptureSupported 是否支持实施照片捕获， Live Photo capture  在电影模式下是不被支持的。
+4.00 图片保存相册 NSPhotoLibraryUsageDescription
+4.01 使用到的类包括 PHPhotoLibrary PHAssetCreationRequest
+4.02 PHAsset 可以根据条件（谓词筛选等）查询相册里面的各种文件（图片，视频，录音）
+4.03 视频保存到相册NSPhotoLibraryAddUsageDescription
+
+
+
+
+
+
+
