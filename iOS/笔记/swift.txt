@@ -1,0 +1,20 @@
+coreData
+
+1、创建实体模型
+2、创建entity模型，添加MO后自动被CoreData框架托管
+
+实体，容器，上下文
+
+启用CoreData
+在appDelegate 生成对应的CoreData代码，对应项目名称，对应实体名称
+
+保存
+/Users/lixueliang/Desktop/lxl/learnDic/iOS/笔记截图/coredata保存数据
+获取数据
+/Users/lixueliang/Desktop/lxl/learnDic/iOS/笔记截图/coredata获取数据
+获取数据按条件
+/Users/lixueliang/Desktop/lxl/learnDic/iOS/笔记截图/coredata按条获取
+删除
+/Users/lixueliang/Desktop/lxl/learnDic/iOS/笔记截图/coredata删除.png
+代理回调
+/Users/lixueliang/Desktop/lxl/learnDic/iOS/笔记截图/coredata代理的三个方法
