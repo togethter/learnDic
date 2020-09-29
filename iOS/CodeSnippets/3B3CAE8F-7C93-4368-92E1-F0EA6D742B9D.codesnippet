@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>blockMethod.m</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/** 方法block回调 */
+@property (nonatomic, copy) &lt;#AYHandle#&gt; &lt;#xxHandle#&gt;;
+
+if (self.&lt;#xxHandle#&gt;) {
+    self.&lt;#xxHandle#&gt;(&lt;#obj#&gt;);
+}
+
+- (void)&lt;#block方法名#&gt;:(&lt;#AYHandle#&gt;)&lt;#xxHandle#&gt; {
+    self.&lt;#xxHandle#&gt; = &lt;#xxHandle#&gt;;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3B3CAE8F-7C93-4368-92E1-F0EA6D742B9D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Block Method Implection</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

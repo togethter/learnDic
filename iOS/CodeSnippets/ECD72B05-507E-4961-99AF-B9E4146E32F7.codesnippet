@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>delegate.m</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>if ([self.&lt;#代理属性#&gt; respondsToSelector:@selector(&lt;#代理方法名loginViewControllerDidSuccess#&gt;:)]) {
+        [self.&lt;#代理属性#&gt; &lt;#代理方法名loginViewControllerDidSuccess#&gt;:&lt;#obj#&gt;];
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>ECD72B05-507E-4961-99AF-B9E4146E32F7</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Protocol callback</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
