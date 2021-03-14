@@ -1,7 +1,8 @@
-//: [Previous](@previous)
+let htttp404Error   = (404,"Not Found")
+print("....\(htttp404Error.0)")
 
-import Foundation
+let http200 = (statusCode:200,description:"0k")
+print("...\(http200.statusCode)")
 
-var str = "Hello, playground"
-
-//: [Next](@next)
+let (aa,_) = htttp404Error
+print("....\(aa)")
